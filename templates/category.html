@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form method="POST">
+        <table>
+            <tr>
+                <th>category:</th>
+                <td><input type="text" name="category"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" name="submit" value="add"></td>
+            </tr>
+        </table>
+    </form>
+
+    <table border="2" align="'center">
+        <tr>
+            <th>SL.NO</th>
+            <th>category</th>
+        </tr>
+
+        {% for i in view %}
+
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.category}}</td>
+            <td><a href="updatecategory/{{i.id}}">UPDATE</a>
+                <a href="deletecategory/{{i.id}}">DELETE</a>
+            </td>
+        </tr>
+
+        {%endfor%}
+        
+
+
+        
+    </table>
+
+
+    
+</body>
+</html>

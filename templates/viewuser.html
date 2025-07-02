@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        <table border="2" align="center">
+            <tr>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>place</th>
+                <th>phone</th>
+                <th>email</th>
+                
+            </tr>
+            {% for row in view %}
+            <tr>
+                <td>{{row.fname}}</td>
+                <td>{{row.lname}}</td>
+                <td>{{row.place}}</td>
+                <td>{{row.phone}}</td>
+                <td>{{row.email}}</td>
+
+            </tr>
+            {%endfor%}
+
+        </table>
+    </form>
+
+    
+</body>
+</html>

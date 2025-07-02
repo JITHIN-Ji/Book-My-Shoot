@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        <table>
+            <tr>
+                <th>service :</th>
+                <td><input type="text" name="service"></td>
+            </tr>
+            
+            <tr>
+                <th>amount :</th>
+                <td><input type="text" name="amount"></td>
+            </tr>
+            
+            <tr>
+                <th>category :</th>
+                
+                <td>
+                    <select name="cate">
+                        {% for row in vie_ws %}
+                        <option value="{{row.id}}">{{row.category}}</option>
+                        {%endfor%}
+                    </select>
+                </td>
+                
+            </tr>
+           
+            
+            <tr>
+                <th>details :</th>
+                <td><input type="text" name="details"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" name="submit"  value="submit"></td>
+            </tr>
+        </table>
+    </form>
+        <table border="2" align="left">
+            <tr>
+                <th>service</th>
+                <th>amount</th>
+                <th>category</th>
+                <th>details</th>
+
+            </tr>
+            {%for row in vie_w%}
+            <tr>
+                <td>{{row.service}}</td>
+                <td>{{row.amount}}</td>
+                <td>
+                    {{row.catgor.category}}
+                        
+                </td>
+                <td>{{row.details}}</td>
+                <td><a href="updateservice/{{row.id}}">update</a>
+                    <a href="deleteservice/{{row.id}}">delete</a>
+                
+                </td>
+            </tr>
+            {%endfor%}
+
+        </table>
+        
+            
+            
+
+            
+        </table>
+    </form>
+    
+</body>
+</html>

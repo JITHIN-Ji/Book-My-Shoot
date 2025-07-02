@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method='POST'>
+        <table>
+            <tr>
+                <th>service :</th>
+                <td><input type="text" name="service" value="{{val.service}}"></td>
+            </tr>
+            <tr>
+                <th>amount :</th>
+                <td><input type="text" name="amount" value="{{val.amount}}"></td>
+            </tr>
+            <tr>
+                <th>details</th>
+                <td><input type="text" name="details" value="{{val.details}}"></td>
+            </tr>
+            <tr>
+                <th>category:</th>
+                <td><select name="cate">
+                    {% for row in upd_category %}
+                    <option value="{{row.id}}">{{row.category}}</option>
+                    {%endfor%}
+                </select>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" name="submit" value="update"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
